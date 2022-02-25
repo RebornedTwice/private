@@ -1,0 +1,19 @@
+--// CFrame Speed
+
+local userInput = game:GetService('UserInputService')
+local runService = game:GetService('RunService')
+
+Mouse.KeyDown:connect(function(Key)
+    local cfKey = Settings.CFSpeed.Key:lower()
+    if (Key == cfKey) then
+        if (Settings.CFSpeed.Toggled) then
+            Settings.CFSpeed.Enabled = not Settings.CFSpeed.Enabled
+            if (Settings.CFSpeed.Enabled == true) then
+                repeat
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame + game.Players.LocalPlayer.Character.Humanoid.MoveDirection * Settings.CFSpeed.Speed
+                    game:GetService("RunService").Stepped:wait()
+                until Settings.CFSpeed.Enabled == false
+            end
+        end
+    end
+end)
