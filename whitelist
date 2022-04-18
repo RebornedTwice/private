@@ -1,6 +1,0 @@
-local whitelisted = {
-  "D8232B4C-79F5-40F1-83CA-1FACE795E015", -- revenge
-  "138DD9A4-31C8-4F80-8781-F94654982340",-- XL
-}
-
-return whitelisted
